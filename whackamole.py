@@ -11,7 +11,7 @@ def main():
         mole_image = pygame.image.load("mole.png")
         screen = pygame.display.set_mode((640, 512))
         clock = pygame.time.Clock()
-        moleCoords = ((round(random.random() * 19)) * 32, (round(random.random() * 15)) * 32)
+        moleCoords = (((round(random.random() * 19)) * 32) + 2, ((round(random.random() * 15)) * 32) + 2)
         running = True
         while running:
             for event in pygame.event.get():
@@ -20,7 +20,7 @@ def main():
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     clickCoords = event.pos
                     if math.floor(event.pos[0] / 32) == math.floor(moleCoords[0] / 32) and math.floor(event.pos[1] / 32) == math.floor(moleCoords[1] / 32):
-                        moleCoords = ((round(random.random() * 19)) * 32, (round(random.random() * 15)) * 32)
+                        moleCoords = (((round(random.random() * 19)) * 32) + 2, ((round(random.random() * 15)) * 32) + 2)
             screen.fill("light green")
             for i in range(0,21):
                 pygame.draw.line(screen, (255,0,0) , (i * 32,0), (i * 32,512))
